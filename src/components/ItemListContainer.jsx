@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Cards = ({imagen, titulo, precio}) => {
+const ItemListContainer = ({imagen, titulo, precio}) => {
     return (
         <Card className = "main_producto">
             <Card.Img variant="top" src={imagen} />
@@ -14,4 +14,4 @@ const Cards = ({imagen, titulo, precio}) => {
     );
 }
 
-export default Cards;
+export default ItemListContainer;

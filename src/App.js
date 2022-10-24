@@ -20,9 +20,9 @@ import producto16 from './images/producto16.jpg';
 import './App.scss';
 import PersonWidget from './components/PersonWidget';
 import CartWidget from './components/CartWidget';
-import NavbarOffcanvas from './components/NavBar';
+import NavBar from './components/NavBar';
 import Newsletter from './components/Newsletter';
-import Cards from './components/Productos';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         </div>
 
         <div className="header_navbar">
-          <NavbarOffcanvas
+          <NavBar
           logo = {logo}
           item1 = "MESAS"
           item2 = "SILLAS"
@@ -61,97 +61,97 @@ function App() {
           </div>
 
           <div className='main_productos'>
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto1}
             titulo = "Estantería modular"
             precio = "$5.200"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto2}
             titulo = "Estantería madera"
             precio = "$3.800"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto3}
             titulo = "Sillón mostaza"
             precio = "$7.800"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto4}
             titulo = "Sillon tapizado"
             precio = "$6.500"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto5}
             titulo = "Mesa vidrio"
             precio = "$12.000"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto6}
             titulo = "Mesa blanca"
             precio = "$14.700"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto7}
             titulo = "Escritorio madera"
             precio = "$21.300"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto8}
             titulo = "Escritorio curvo"
             precio = "$23.400"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto9}
             titulo = "Planta artificial"
             precio = "$2.100"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto10}
             titulo = "Combo plantas"
             precio = "$3.600"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto11}
             titulo = "Adorno jirafa"
             precio = "$1.300"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto12}
             titulo = "Conjunto 3 cuadros"
             precio = "$4.700"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto13}
             titulo = "Lámpara ADN"
             precio = "$7.800"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto14}
             titulo = "Lámpara LED"
             precio = "$5.900"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto15}
             titulo = "Silla madera"
             precio = "$4.400"
             />
 
-            <Cards className='main_producto'
+            <ItemListContainer className='main_producto'
             imagen = {producto16}
             titulo = "Silla blanca"
             precio = "$7.100"

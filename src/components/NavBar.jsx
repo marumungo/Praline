@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const NavbarOffcanvas = ({logo, item1, item2, item3, item4, item5, item51, item52, item53, item5Todo, icon1, icon2}) => {
+const NavBar = ({logo, item1, item2, item3, item4, item5, item51, item52, item53, item5Todo, icon1, icon2}) => {
     return (
         <>
         {['sm'].map((expand) => (
@@ -51,4 +51,4 @@ const NavbarOffcanvas = ({logo, item1, item2, item3, item4, item5, item51, item5
     );
 }
 
-export default NavbarOffcanvas;
+export default NavBar;
