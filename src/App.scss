@@ -61,16 +61,12 @@ button {
   z-index: 2;
 
   .header_top {
-    background-color: black;
+    background-color: $color1;
     color: white;
     padding: 0.5%;
     text-align: center;
     font-family: $tipografia;
     font-size: 1.5rem;
-
-    &:hover {
-      background-color: #6B4F4F;
-    }
   }
 
   .header_navbar {
@@ -127,9 +123,10 @@ button {
       .navbar_icon {
         margin: 0% 15% 0% 15%;
         font-size: 7rem;
+        color: $color1;
 
         &:hover {
-          color: $color1;
+          color: $color2;
         }
       }
     }
@@ -311,7 +308,7 @@ main {
 
         .valid-feedback {
           margin-top: 3%;
-          color: #6B4F4F;
+          color: $color1;
         }
       }
 
@@ -333,7 +330,7 @@ main {
 // FOOTER
 .footer {
   padding: 1%;
-  background-color: black;
+  background-color: $color1;
 
   p {
     margin: 2%;
