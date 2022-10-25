@@ -12,6 +12,7 @@ const Item = ({imagen, titulo, precio, stock}) => {
                 onAdd={() => console.log ("Agregado al carrito!")}
                 stock={stock}
                 />
+                <span className='stockDisponible'>Quedan <strong>{stock}</strong> disponibles!</span>
             </Card.Body>
         </Card>
     );

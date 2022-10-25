@@ -36,7 +36,7 @@ function App() {
       </header>
 
       <main className="main">
-        <img src={imagen1} alt="imagenPresentacion" />
+        <img className="imagenPresentacion" src={imagen1} alt="imagenPresentacion" />
 
         <div className='main_seccionProductos'>
           <div className='main_tituloProductos'>
