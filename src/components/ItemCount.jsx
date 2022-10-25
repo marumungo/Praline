@@ -19,7 +19,7 @@ const ItemCount = ({stock, onAdd}) => {
 
     useEffect (() => {
         console.log (stock)
-    }, []);
+    });
 
     return (
     <div className='main_producto_counter'>
