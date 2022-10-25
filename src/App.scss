@@ -193,6 +193,18 @@ main {
           font-weight: 600;
         }
 
+        .main_producto_buttons_card {
+          margin-bottom: 5%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          span {
+            margin: 0% 6% 0% 6%;
+          }
+        }
+
         .main_producto_button {
           font-family: $tipografia;
           font-size: 1.7rem;

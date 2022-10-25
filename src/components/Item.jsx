@@ -1,14 +1,17 @@
-import Button from 'react-bootstrap/Button';
+import ItemCount from './ItemCount';
 import Card from 'react-bootstrap/Card';
 
-const Item = ({imagen, titulo, precio}) => {
+const Item = ({imagen, titulo, precio, stock}) => {
     return (
         <Card className = "main_producto">
             <Card.Img variant="top" src={imagen} />
             <Card.Body>
                 <Card.Title className = "main_producto_title">{titulo}</Card.Title>
                 <Card.Text className = "main_producto_price">{precio}</Card.Text>
-                <Button className = "main_producto_button" variant="primary">Agregar</Button>
+                <ItemCount 
+                onAdd={() => console.log ("Agregado al carrito!")}
+                stock={stock}
+                />
             </Card.Body>
         </Card>
     );
