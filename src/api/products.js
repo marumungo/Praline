@@ -171,7 +171,7 @@ export const getProducts = (categoryId) =>
 
 export const getProduct = (productId) =>
 new Promise ((res, rej) => {
-    const response = products.find ((product) => product.id == productId)
+    const response = products.find ((product) => product.id === +productId)
     setTimeout(() => {
         res (response);
     });
