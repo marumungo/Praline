@@ -3,7 +3,7 @@ import {ItemCount} from '../ItemCount/ItemCount';
 export const ItemDetail = ({imagen, titulo, precio, stock, descripcion}) => {
     return (
         <div className='main_producto_detalle'>
-            <img src={imagen} />
+            <img src={imagen} alt="imagenProducto" />
             <div>
                 <div>
                     <h1 className='main_producto_title_detalle'>{titulo}</h1>
