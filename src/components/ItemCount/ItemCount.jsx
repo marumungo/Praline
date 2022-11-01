@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({stock, onAdd}) => {
+export const ItemCount = ({stock, onAdd}) => {
 
     const [contador, setContador] = useState (0);
 
@@ -24,13 +24,11 @@ const ItemCount = ({stock, onAdd}) => {
     return (
     <div className='main_producto_counter'>
         <div className='main_producto_buttons_card'>
+            <Button className='main_producto_button' onClick={() => handleSubstract ()}>-</Button>
+            <span>{contador}</span> 
             <Button className='main_producto_button' onClick={() => handleAdd ()}>+</Button>
-            <span>{contador}</span>
-            <Button className='main_producto_button' onClick={() => handleSubstract ()}>-</Button> 
         </div>    
         <Button className = "main_producto_button" variant="primary" onClick={() => {if (contador) onAdd ()}}>Agregar</Button>
     </div>
     );
 };
-
-export default ItemCount;

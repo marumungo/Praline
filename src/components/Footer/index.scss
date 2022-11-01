@@ -1,0 +1,17 @@
+.footer {
+    padding: 1%;
+    background-color: $color1;
+
+    p {
+        margin: 2%;
+        text-align: center;
+        color: white;
+        font-family: $tipografia;
+
+        strong {
+        &:hover {
+            color: $color2;
+        }
+        }
+    }
+}

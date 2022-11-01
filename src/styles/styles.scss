@@ -1,0 +1,89 @@
+// LLAMADOS 
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+
+// TIPOGRAFÍAS 
+// font-family: 'Montserrat', sans-serif;
+
+// PALETA DE COLORES 
+// #6B4F4F
+// #EED6C4
+
+// VARIABLES
+$tipografia: 'Montserrat', sans-serif; 
+$color1: #6B4F4F;
+$color2: #EED6C4;
+
+// MEDIA QUERIES
+
+// RESETEO
+* {
+  font-weight: 400;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  position: relative;
+  min-width: 100%;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  font-size: 16px;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+  height: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+button {
+  background: none;
+}
+
+// HEADER
+
+@import "../components/NavBar/index.scss";
+
+// MAIN 
+main {
+  z-index: 1;
+
+  .imagenPresentacion {
+    margin-top: 10%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @import "../components/ItemListContainer/index.scss";
+
+  @import "../components/Loader/index.scss";
+
+  @import "../components/Item/index.scss";
+
+  @import "../components/ItemCount/index.scss";
+
+  @import "../components/ItemDetailContainer/index.scss";
+
+  @import "../components/ItemDetail/index.scss";
+
+  @import "../components/Newsletter/index.scss";
+}
+
+
+// FOOTER
+@import "../components/Footer/index.scss";

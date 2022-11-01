@@ -1,0 +1,37 @@
+.main_producto_detalle {
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+        width: 40%;
+        margin: 15% 0% 5% 7%;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        margin: 10% 5% 5% 5%;
+
+        .main_producto_title_detalle {
+            font-family: $tipografia;
+            font-size: 3.8rem;
+            margin-bottom: 5%;
+        }
+
+        .main_producto_price_detalle {
+            @extend .main_producto_title_detalle;
+            font-weight: 600;
+            margin-bottom: 5%;
+            color: $color1
+        }
+
+        .main_producto_descripcion_detalle {
+            font-family: $tipografia;
+            font-size: 2.3rem;
+        }
+    }
+}

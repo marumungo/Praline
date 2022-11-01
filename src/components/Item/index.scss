@@ -1,0 +1,15 @@
+.main_producto {
+    width: 20%;
+    margin: 2%;
+
+    .main_producto_title {
+        font-family: $tipografia;
+        font-size: 1.8rem;
+        margin-bottom: 4%;
+    }
+
+    .main_producto_price {
+    @extend .main_producto_title;
+    font-weight: 600;
+    }
+}

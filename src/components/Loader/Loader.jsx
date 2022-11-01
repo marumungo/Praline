@@ -1,7 +1,7 @@
 import { ThreeCircles } from  'react-loader-spinner'
 import { useEffect } from 'react'
 
-const Loader = () => {
+export const Loader = () => {
     useEffect (() => {
         console.log ("Está cargando")
         return () => console.log ("Se desmontó")
@@ -25,5 +25,3 @@ const Loader = () => {
         </div>
     );
 }
-
-export default Loader;

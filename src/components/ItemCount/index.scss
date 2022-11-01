@@ -1,0 +1,93 @@
+// ESTILOS PRODUCTO CARDS
+
+.main_producto {
+    &:hover {
+        transform: scale(1.05);
+
+    }
+    .main_producto_counter {
+        margin-bottom: 5%;
+        .main_producto_buttons_card {
+            margin-bottom: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+    
+            span {
+                margin: 0% 6% 0% 6%;
+            }
+        }
+    
+        .main_producto_button {
+            font-family: $tipografia;
+            font-size: 1.7rem;
+            background-color: $color1;
+            border: none;
+    
+            &:hover {
+            background-color: $color2;
+            }
+        }
+    }
+    
+    .stockDisponible {
+        margin-top: 50%;
+        font-family: $tipografia;
+    }
+    
+    strong {
+        font-weight: 600;
+        color: $color1;
+    }
+}
+
+// ESTILOS PRODUCTO DETALLE
+
+.main_producto_detalle {
+    .main_producto_itemCount {
+        margin-top: 1%;
+        display: grid;
+    }
+    .main_producto_counter {
+        display: flex;
+        flex-direction: column;
+        margin: 0%;
+
+        .main_producto_buttons_card {
+            margin: 0% 0% 18% 0%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            span {
+                margin: 0% 6% 0% 6%;
+                font-size: 2.3rem;
+            }
+        }
+
+        .main_producto_button {
+            font-family: $tipografia;
+            font-size: 2.3rem;
+            background-color: $color1;
+            border: none;
+    
+            &:hover {
+            background-color: $color2;
+            }
+        }
+    }
+
+    .stockDisponible {
+        margin-top: 20%;
+        font-family: $tipografia;
+        font-size: 2.3rem;
+    }
+
+    strong {
+        font-weight: 600;
+        color: $color1;
+    }
+}
+

@@ -1,0 +1,78 @@
+.header {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 2;
+
+.header_top {
+    background-color: $color1;
+    color: white;
+    padding: 0.5%;
+    text-align: center;
+    font-family: $tipografia;
+    font-size: 1.5rem;
+}
+
+.header_navbar {
+    margin: 0.5% 0% 0.5% 0%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: inherit;
+
+    img {
+    width: 52%;
+    margin-left: -50%;
+    }
+    .navbar_title {
+    font-family: $tipografia;
+    }
+    .navbar_body {
+    margin: 0% 20% 0% 0%;
+    display: flex;
+    align-items: center;
+
+    .navbar_items {
+        padding: 0% 2% 0% 2%;
+        font-family: $tipografia;
+        color: grey;
+        font-size: 1.9rem;
+
+        &:hover {
+        color:$color1;
+        }
+
+        #offcanvasNavbarDropdown-expand-sm {
+        color: grey;
+        padding: 0% 2% 0% 2%;
+
+        &:hover {
+            color:$color1;
+        }
+        }
+
+        .navbar_items2 {
+        font-family: $tipografia;
+        color: grey;
+        font-size: 1.5rem;
+        }
+    }
+    }
+
+    .navbar_icons {
+    display: flex;
+    flex-direction: row;
+
+    svg {
+        margin: 0% 15% 0% 15%;
+        font-size: 7rem;
+        color: $color1;
+
+        &:hover {
+        color: $color2;
+        }
+    }
+    }
+}
+}

@@ -1,14 +1,16 @@
-import ItemCount from './ItemCount';
+import {ItemCount} from '../ItemCount/ItemCount';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
-const Item = ({imagen, titulo, precio, stock}) => {
+export const Item = ({imagen, titulo, precio, stock, id}) => {
+    const navigate = useNavigate ();
     return (
-        <Card className = "main_producto">
+        <Card onClick={() => navigate (`/producto/${id}`)} className = "main_producto">
             <Card.Img variant="top" src={imagen} />
             <Card.Body>
                 <Card.Title className = "main_producto_title">{titulo}</Card.Title>
                 <Card.Text className = "main_producto_price">{precio}</Card.Text>
-                <ItemCount 
+                <ItemCount
                 onAdd={() => console.log ("Agregado al carrito!")}
                 stock={stock}
                 />
@@ -17,5 +19,3 @@ const Item = ({imagen, titulo, precio, stock}) => {
         </Card>
     );
 }
-
-export default Item;

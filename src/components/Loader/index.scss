@@ -1,0 +1,34 @@
+
+.main_productos {
+    .cargando {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    
+        span {
+            font-family: $tipografia;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 30%;
+        }
+    }
+}
+
+.main_productos_detalle {
+    .cargando {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            font-family: $tipografia;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 2%;
+        }
+    }
+}
