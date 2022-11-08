@@ -1,10 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from 'react-router-dom';
 
-export const NavBar = ({logo, item1, item2, item3, item4, item5, item51, item52, item53, icon1, icon2}) => {
+const links = ["MESAS", "SILLAS", "ESTANTERIAS", "ESCRITORIOS", "DECORACION"];
+
+export const NavBar = ({logo, icon1, icon2}) => {
     return (
         <>
         {['sm'].map((expand) => (
@@ -22,28 +24,22 @@ export const NavBar = ({logo, item1, item2, item3, item4, item5, item51, item52,
                             <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
                             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                            placement="end"
-                            >
+                            placement="end">
                                 <Offcanvas.Header closeButton>
                                     <Offcanvas.Title className="navbar_title" id={`offcanvasNavbarLabel-expand-${expand}`}>
                                     MENÚ PRINCIPAL
                                     </Offcanvas.Title>
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
-                                    <Nav className="navbar_body justify-content-end flex-grow-1 pe-3">
-                                        <Nav.Link className="navbar_items" href="/categoria/mesas">{item1}</Nav.Link>
-                                        <Nav.Link className="navbar_items" href="/categoria/sillas">{item2}</Nav.Link>
-                                        <Nav.Link className="navbar_items" href="/categoria/estanterias">{item3}</Nav.Link>
-                                        <Nav.Link className="navbar_items" href="/categoria/escritorios">{item4}</Nav.Link>
-                                        <NavDropdown className="navbar_items"
-                                            title = {item5}
-                                            id={`offcanvasNavbarDropdown-expand-${expand}`}
-                                        >
-                                            <NavDropdown.Item className="navbar_items2" href="/categoria/plantas">{item51}</NavDropdown.Item>
-                                            <NavDropdown.Item className="navbar_items2" href="/categoria/adornos">{item52}</NavDropdown.Item>
-                                            <NavDropdown.Item className="navbar_items2" href="/categoria/lamparas">{item53}</NavDropdown.Item>
-                                        </NavDropdown>
-                                    </Nav>
+                                    {links.map ((elemento) => {
+                                        return (
+                                            <Nav className="navbar_body justify-content-end flex-grow-1 pe-3">
+                                                    <Nav.Link className="navbar_categorias">
+                                                        <Link className="navbar_items" to={`/categoria/${elemento.toLowerCase()}`} key={elemento}>{elemento}</Link>
+                                                    </Nav.Link>
+                                            </Nav>
+                                        )
+                                    })}
                                     <div className='navbar_icons'>{icon1} {icon2}</div>
                                 </Offcanvas.Body>
                             </Navbar.Offcanvas>

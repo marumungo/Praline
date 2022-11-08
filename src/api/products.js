@@ -81,7 +81,7 @@ const products = [
 
     {
         id: 9,
-        categoria: "plantas",
+        categoria: "decoracion",
         imagen: require ("../images/producto9.png"),
         titulo: "Planta artificial",
         precio: "$2.100",
@@ -91,7 +91,7 @@ const products = [
 
     {
         id: 10,
-        categoria: "plantas",
+        categoria: "decoracion",
         imagen: require ("../images/producto10.jpg"),
         titulo: "Combo plantas",
         precio: "$3.600",
@@ -101,7 +101,7 @@ const products = [
 
     {
         id: 11,
-        categoria: "adornos",
+        categoria: "decoracion",
         imagen: require ("../images/producto11.png"),
         titulo: "Adorno jirafa",
         precio: "$1.300",
@@ -111,7 +111,7 @@ const products = [
 
     {
         id: 12,
-        categoria: "adornos",
+        categoria: "decoracion",
         imagen: require ("../images/producto12.jpg"),
         titulo: "Conjunto 3 cuadros",
         precio: "$4.700",
@@ -121,7 +121,7 @@ const products = [
 
     {
         id: 13,
-        categoria: "lamparas",
+        categoria: "decoracion",
         imagen: require ("../images/producto13.jpg"),
         titulo: "Lámpara ADN",
         precio: "$7.800",
@@ -131,7 +131,7 @@ const products = [
 
     {
         id: 14,
-        categoria: "lamparas",
+        categoria: "decoracion",
         imagen: require ("../images/producto14.jpg"),
         titulo: "Lámpara LED",
         precio: "$5.900",

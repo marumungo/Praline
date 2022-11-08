@@ -1,6 +1,22 @@
 import {ItemCount} from '../ItemCount/ItemCount';
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { getProduct } from 'api/products';
 
 export const ItemDetail = ({imagen, titulo, precio, stock, descripcion}) => {
+    const {productId} = useParams ();
+    const [product, setProduct] = useState ([]);
+
+    useEffect (() => {
+        getProduct (productId).then ((data) => {
+            setProduct (data);
+        })
+    }, [productId]);
+
+    const handleAdd = (qty) => {
+            console.log ("producto agregado", {...product, qty})
+    };
+
     return (
         <div className='main_producto_detalle'>
             <img src={imagen} alt="imagenProducto" />
@@ -12,7 +28,7 @@ export const ItemDetail = ({imagen, titulo, precio, stock, descripcion}) => {
                 </div>
                 <div className='main_producto_itemCount'>
                     <ItemCount
-                    onAdd={() => console.log ("Agregado al carrito!")}
+                    onAdd={handleAdd}
                     stock={stock}
                     />
                     <span className='stockDisponible'>Quedan <strong>{stock}</strong> disponibles!</span>

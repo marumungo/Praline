@@ -29,35 +29,36 @@
     font-family: $tipografia;
     }
     .navbar_body {
-    margin: 0% 20% 0% 0%;
+    margin: 0% 18% 0% -14%;
     display: flex;
     align-items: center;
-
-    .navbar_items {
-        padding: 0% 2% 0% 2%;
-        font-family: $tipografia;
-        color: grey;
-        font-size: 1.9rem;
-
-        &:hover {
-        color:$color1;
-        }
-
-        #offcanvasNavbarDropdown-expand-sm {
-        color: grey;
-        padding: 0% 2% 0% 2%;
-
-        &:hover {
-            color:$color1;
-        }
-        }
-
-        .navbar_items2 {
-        font-family: $tipografia;
-        color: grey;
-        font-size: 1.5rem;
-        }
     }
+
+    .navbar_categorias {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        
+        .navbar_items {
+            padding: 0% 15% 0% 15%;
+            font-family: $tipografia;
+            color: grey;
+            font-size: 1.9rem;
+            text-decoration: none;
+    
+            &:hover {
+                color:$color1;
+            }
+    
+            #offcanvasNavbarDropdown-expand-sm {
+                color: grey;
+                padding: 0% 2% 0% 2%;
+        
+                &:hover {
+                    color:$color1;
+                }
+            }
+        }
     }
 
     .navbar_icons {
