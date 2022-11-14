@@ -9,7 +9,28 @@
     }
 
     .main_producto_price {
-    @extend .main_producto_title;
-    font-weight: 600;
+        @extend .main_producto_title;
+        font-weight: 600;
+    }
+
+    .main_producto_button {
+        font-family: $tipografia;
+        font-size: 1.5rem;
+        background-color: $color1;
+        border: none;
+
+        &:hover {
+            background-color: $color2;
+        }
+    }
+
+    .stockDisponible {
+        margin-top: 5%;
+        font-family: $tipografia;
+    }
+
+    strong {
+        font-weight: 600;
+        color: $color1;
     }
 }

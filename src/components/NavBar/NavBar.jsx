@@ -17,8 +17,10 @@ export const NavBar = ({logo, icon1, icon2}) => {
                 <div className='header_navbar'>
                     <Navbar key={expand} expand={expand} className="mb-3">
                         <Container className= "header_navbar" fluid>
-                            <Navbar.Brand href="/">
-                                <img src = {logo} alt = "logo" />
+                            <Navbar.Brand>
+                                <Link to={`/`}>
+                                    <img src = {logo} alt = "logo" />
+                                </Link>
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                             <Navbar.Offcanvas
@@ -40,7 +42,10 @@ export const NavBar = ({logo, icon1, icon2}) => {
                                             </Nav>
                                         )
                                     })}
-                                    <div className='navbar_icons'>{icon1} {icon2}</div>
+                                    <div className='navbar_icons'>
+                                        {/* <Link to={`/usuario`}>{icon1}</Link> */}
+                                        <Link to={`/carrito`}>{icon2}</Link>
+                                    </div>
                                 </Offcanvas.Body>
                             </Navbar.Offcanvas>
                         </Container>

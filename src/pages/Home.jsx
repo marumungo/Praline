@@ -1,8 +1,6 @@
 import { getProducts } from "api/products"
-import { ItemListContainer } from "components/index"
-import { Newsletter } from "components/index"
-import { useEffect } from "react"
-import { useState } from "react"
+import { ItemListContainer, Newsletter } from "components/index"
+import { useEffect, useState } from "react"
 import imagen1 from "../images/imagen1.png"
 
 export const Home = () => {
@@ -29,6 +27,11 @@ export const Home = () => {
                 <img className="imagenPresentacion" src={imagen1} alt="imagenPresentacion" />
 
                 <div className='main_seccionProductos'>
+                    <div className='main_tituloProductos'>
+                        <hr />
+                        <h1> PRODUCTOS </h1>
+                        <hr />
+                    </div>
                     <ItemListContainer 
                     products={products}
                     loading={loading}
@@ -40,5 +43,5 @@ export const Home = () => {
                     <Newsletter />
                 </div>
             </main>
-    )
-}
+    );
+};

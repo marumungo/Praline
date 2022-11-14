@@ -26,19 +26,9 @@
             border: none;
     
             &:hover {
-            background-color: $color2;
+                background-color: $color2;
             }
         }
-    }
-    
-    .stockDisponible {
-        margin-top: 50%;
-        font-family: $tipografia;
-    }
-    
-    strong {
-        font-weight: 600;
-        color: $color1;
     }
 }
 

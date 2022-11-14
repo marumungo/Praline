@@ -5,29 +5,34 @@ import { ItemListContainer } from "components/index";
 
 export const Category = () => {
     const { categoryId } = useParams();
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [products, setProducts] = useState ([]);
+    const [loading, setLoading] = useState (true);
 
     useEffect(() => {
-        setProducts([]);
-        setLoading(true);
-        getProducts(categoryId)
+        setProducts ([]);
+        setLoading (true);
+        getProducts (categoryId)
         .then((items) => {
-            setProducts(items);
-            setLoading(false);
+            setProducts (items);
+            setLoading (false);
         })
         .catch((e) => console.log(e));
     }, [categoryId]);
 
     return (
         <>
-        <div className="content">
-            <h2>
-            Lo mejor en la categoría <span>{categoryId}</span>{" "}
-            </h2>
-        </div>
         <main className="main">
                 <div className='main_seccionProductos_categorias'>
+                    <div className='main_tituloProductos'>
+                        <hr />
+                        <h1> PRODUCTOS </h1>
+                        <hr />
+                    </div>
+                    <div className="main_tituloProductos_categoria">
+                        <h2>
+                            Lo mejor en <strong>{categoryId.toUpperCase()}</strong>{" "}
+                        </h2>
+                    </div>
                     <ItemListContainer products={products} loading={loading}/>
                 </div>
             </main>
