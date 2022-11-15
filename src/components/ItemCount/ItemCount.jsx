@@ -5,16 +5,12 @@ export const ItemCount = ({ stock, onAdd }) => {
     const [contador, setContador] = useState (0);
 
     const handleAdd = () => {
-        if (contador < stock) {
-            setContador (contador + 1)
-        };
+        if (contador < stock) setContador (contador + 1);
     };
 
     const handleSubstract = () => {
-        if (contador > 0) {
-            setContador (contador - 1)
-        };
-    }
+        if (contador > 0) setContador (contador - 1);
+    };
 
     return (
     <div className='main_producto_counter'>
@@ -25,8 +21,9 @@ export const ItemCount = ({ stock, onAdd }) => {
         </div>    
         <Button className = "main_producto_button" variant="primary" 
             onClick={() => {
-                if (contador) onAdd (contador)
+                if (contador) onAdd (contador);
             }}
+            disabled={!contador}
             >Agregar
         </Button>
     </div>

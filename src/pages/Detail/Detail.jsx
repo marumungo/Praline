@@ -2,9 +2,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProduct } from "api/products";
 import { ItemCount } from "components/index";
+import { useCartContext } from "context/cartContext";
 
 export const Detail = () => {
     const { productId } = useParams ();
+    const { addProduct } = useCartContext ();
     const [product, setProduct] = useState ({});
 
     useEffect (() => {
@@ -13,8 +15,8 @@ export const Detail = () => {
         });
     }, [productId]);
 
-    const handleAdd = (contador) => {
-        console.log ("Producto agregado", { ...product, contador });
+    const handleAdd = (qty) => {
+        addProduct (product, qty);
     };
 
     return (

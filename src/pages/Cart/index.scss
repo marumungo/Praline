@@ -1,0 +1,42 @@
+.carrito {
+    margin: 0%;
+
+    .carrito_titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            margin: 15% 4.5% 0% 4.5%;
+            font-family: $tipografia;
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+
+            &:hover {
+            color: $color1;
+            }
+        }
+
+        hr {
+            text-align: center;
+            width: 30%;
+            margin-top: 15%;
+        }
+    }
+
+    .carrito_info {
+        margin: 2% 0% 2% 43%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: flex-start;
+
+        .carrito_producto {
+            line-height: 3rem;
+            font-family: $tipografia;
+            margin: 1% 0% 0% 0%;
+        }
+    }
+}
+

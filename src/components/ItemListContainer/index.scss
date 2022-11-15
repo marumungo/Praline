@@ -72,6 +72,10 @@
 
             strong {
                 color: $color1;
+
+                &:hover {
+                    color: $color2;
+                }
             }
         }
     }
