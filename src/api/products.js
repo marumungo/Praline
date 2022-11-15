@@ -35,7 +35,7 @@ export const getProduct = async (productId) => {
 const products = [
     {
         categoria: "estanterias",
-        imagen: "images/producto1.jpg",
+        imagen: "/images/producto1.jpg",
         titulo: "Estantería modular",
         precio: 5200,
         stock: 20,
@@ -44,7 +44,7 @@ const products = [
 
     {
         categoria: "estanterias",
-        imagen: "images/producto2.jpg",
+        imagen: "/images/producto2.jpg",
         titulo: "Estantería madera",
         precio: 3800,
         stock: 15,
@@ -53,7 +53,7 @@ const products = [
 
     {
         categoria: "sillas",
-        imagen: "images/producto3.jpg",
+        imagen: "/images/producto3.jpg",
         titulo: "Sillón mostaza",
         precio: 7800,
         stock: 34,
@@ -62,7 +62,7 @@ const products = [
 
     {
         categoria: "sillas",
-        imagen: "images/producto4.jpg",
+        imagen: "/images/producto4.jpg",
         titulo: "Sillon tapizado",
         precio: 6500,
         stock: 5,
@@ -71,7 +71,7 @@ const products = [
 
     {
         categoria: "mesas",
-        imagen: "images/producto5.jpg",
+        imagen: "/images/producto5.jpg",
         titulo: "Mesa vidrio",
         precio: 12000,
         stock: 9,
@@ -80,7 +80,7 @@ const products = [
 
     {
         categoria: "mesas",
-        imagen: "images/producto6.jpg",
+        imagen: "/images/producto6.jpg",
         titulo: "Mesa blanca",
         precio: 14700,
         stock: 13,
@@ -89,7 +89,7 @@ const products = [
 
     {
         categoria: "escritorios",
-        imagen: "images/producto7.jpg",
+        imagen: "/images/producto7.jpg",
         titulo: "Escritorio madera",
         precio: 21300,
         stock: 7,
@@ -98,7 +98,7 @@ const products = [
 
     {
         categoria: "escritorios",
-        imagen: "images/producto8.jpg",
+        imagen: "/images/producto8.jpg",
         titulo: "Escritorio curvo",
         precio: 23400,
         stock: 3,
@@ -107,7 +107,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto9.png",
+        imagen: "/images/producto9.png",
         titulo: "Planta artificial",
         precio: 2100,
         stock: 54,
@@ -116,7 +116,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto10.jpg",
+        imagen: "/images/producto10.jpg",
         titulo: "Combo plantas",
         precio: 3600,
         stock: 27,
@@ -125,7 +125,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto11.png",
+        imagen: "/images/producto11.png",
         titulo: "Adorno jirafa",
         precio: 1300,
         stock: 56,
@@ -134,7 +134,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto12.jpg",
+        imagen: "/images/producto12.jpg",
         titulo: "Conjunto 3 cuadros",
         precio: 4700,
         stock: 32,
@@ -143,7 +143,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto13.jpg",
+        imagen: "/images/producto13.jpg",
         titulo: "Lámpara ADN",
         precio: 7800,
         stock: 21,
@@ -152,7 +152,7 @@ const products = [
 
     {
         categoria: "decoracion",
-        imagen: "images/producto14.jpg",
+        imagen: "/images/producto14.jpg",
         titulo: "Lámpara LED",
         precio: 5900,
         stock: 46,
@@ -161,7 +161,7 @@ const products = [
 
     {
         categoria: "sillas",
-        imagen: "images/producto15.jpg",
+        imagen: "/images/producto15.jpg",
         titulo: "Silla madera",
         precio: 4400,
         stock: 35,
@@ -170,7 +170,7 @@ const products = [
 
     {
         categoria: "sillas",
-        imagen: "images/producto16.jpg",
+        imagen: "/images/producto16.jpg",
         titulo: "Silla blanca",
         precio: 7100,
         stock: 32,

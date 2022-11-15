@@ -7,6 +7,7 @@ export const Home = () => {
     const [loading, setLoading] = useState (true);
 
     useEffect (() => {
+        // cargarData ();
         setProducts ([]);
         setLoading (true);
         getProducts ()
