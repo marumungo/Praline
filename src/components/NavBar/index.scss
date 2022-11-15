@@ -85,6 +85,10 @@
                     color: $color1;
                     font-weight: bolder;
                     font-family: $tipografia;
+
+                    &:hover {
+                        color: $color2;
+                    }
                 }
             }
         }

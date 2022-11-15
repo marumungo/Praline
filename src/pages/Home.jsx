@@ -1,7 +1,6 @@
-import { getProducts } from "api/products"
+import { cargarData, getProducts } from "api/products"
 import { ItemListContainer, Newsletter } from "components/index"
 import { useEffect, useState } from "react"
-import imagen1 from "../images/imagen1.png"
 
 export const Home = () => {
     const [products, setProducts] = useState ([]);
@@ -24,7 +23,7 @@ export const Home = () => {
 
     return (
             <main className="main">
-                <img className="imagenPresentacion" src={imagen1} alt="imagenPresentacion" />
+                <img className="imagenPresentacion" src="/images/imagen1.png" alt="imagenPresentacion" />
 
                 <div className='main_seccionProductos'>
                     <div className='main_tituloProductos'>

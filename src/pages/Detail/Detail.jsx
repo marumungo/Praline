@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getProduct } from "api/products";
 import { ItemCount } from "components/index";
 import { useCartContext } from "context/cartContext";
+import { Loader } from "components/index";
 
 export const Detail = () => {
     const { productId } = useParams ();
@@ -19,6 +20,9 @@ export const Detail = () => {
         addProduct (product, qty);
     };
 
+    if (!Object.keys(product).length) {
+        return <Loader />
+    }
     return (
         <main>
             <div className='main_producto_detalle'>

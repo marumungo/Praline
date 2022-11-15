@@ -5,17 +5,12 @@ export const ItemListContainer = ({ products, loading, onAdd }) => {
     return (
         <div>
             <div className='main_productos'>
-                {loading ? <Loader qty={3} /> : null}
+                {loading && <Loader />}
                 {products.map ((producto) => {
                     return (
                         <Item className='main_producto'
                             key = {producto.id}
-                            id = {producto.id}
-                            imagen = {producto.imagen}
-                            titulo = {producto.titulo}
-                            precio = {producto.precio}
-                            stock = {producto.stock}
-                            categoria = {producto.categoria}
+                            {...producto}
                             onAdd = {onAdd}
                         />
                     );

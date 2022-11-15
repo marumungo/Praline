@@ -1,17 +1,14 @@
-import { useCartContext } from 'context/cartContext';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
-import { BsCartFill } from 'react-icons/bs';
+import { CartWidget } from 'components/CartWidget/CartWidget';
+
 
 const links = ["MESAS", "SILLAS", "ESTANTERIAS", "ESCRITORIOS", "DECORACION"];
 
 export const NavBar = ({logo}) => {
-    const { cart, getCartQty } = useCartContext ();
-    console.log ({ cart });
-
     return (
         <>
         {['sm'].map((expand) => (
@@ -49,10 +46,7 @@ export const NavBar = ({logo}) => {
                                     })}
                                     <div>
                                         <Link to={`/carrito`} className="navbar_icons">
-                                            <div className='navbar_icons_cart'>
-                                                <BsCartFill />{" "}
-                                                <span className='navbar_icons_number'>{getCartQty()}</span>
-                                            </div>
+                                            <CartWidget />
                                         </Link>
                                     </div>
                                 </Offcanvas.Body>

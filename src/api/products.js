@@ -1,8 +1,41 @@
+import { db } from "./config";
+import { collection, getDocs, query, where, doc, getDoc, addDoc } from "firebase/firestore";
+
+const productsRef = collection (db, "items");
+
+export const getProducts = async (categoryId) => {
+    const products = [];
+
+    const q = categoryId
+    ? query(productsRef, where ("categoria", "==", categoryId))
+    : productsRef;
+
+    const querySnapshot = await getDocs (q);
+
+    querySnapshot.forEach ((doc) => {
+        products.push ({ ...doc.data(), id: doc.id });
+    });
+
+    return products;
+};
+
+export const getProduct = async (productId) => {
+    const document = doc(db, "items", productId);
+
+    const docSnap = await getDoc (document);
+
+    if (docSnap.exists()) {
+        return { id: docSnap.id, ...docSnap.data() };
+    }
+
+    return null;
+};
+
+
 const products = [
     {
-        id: 1,
         categoria: "estanterias",
-        imagen: require ("../images/producto1.jpg"),
+        imagen: "images/producto1.jpg",
         titulo: "Estantería modular",
         precio: 5200,
         stock: 20,
@@ -10,9 +43,8 @@ const products = [
     },
 
     {
-        id: 2,
         categoria: "estanterias",
-        imagen: require ("../images/producto2.jpg"),
+        imagen: "images/producto2.jpg",
         titulo: "Estantería madera",
         precio: 3800,
         stock: 15,
@@ -20,9 +52,8 @@ const products = [
     },
 
     {
-        id: 3,
         categoria: "sillas",
-        imagen: require ("../images/producto3.jpg"),
+        imagen: "images/producto3.jpg",
         titulo: "Sillón mostaza",
         precio: 7800,
         stock: 34,
@@ -30,9 +61,8 @@ const products = [
     },
 
     {
-        id: 4,
         categoria: "sillas",
-        imagen: require ("../images/producto4.jpg"),
+        imagen: "images/producto4.jpg",
         titulo: "Sillon tapizado",
         precio: 6500,
         stock: 5,
@@ -40,9 +70,8 @@ const products = [
     },
 
     {
-        id: 5,
         categoria: "mesas",
-        imagen: require ("../images/producto5.jpg"),
+        imagen: "images/producto5.jpg",
         titulo: "Mesa vidrio",
         precio: 12000,
         stock: 9,
@@ -50,9 +79,8 @@ const products = [
     },
 
     {
-        id: 6,
         categoria: "mesas",
-        imagen: require ("../images/producto6.jpg"),
+        imagen: "images/producto6.jpg",
         titulo: "Mesa blanca",
         precio: 14700,
         stock: 13,
@@ -60,9 +88,8 @@ const products = [
     },
 
     {
-        id: 7,
         categoria: "escritorios",
-        imagen: require ("../images/producto7.jpg"),
+        imagen: "images/producto7.jpg",
         titulo: "Escritorio madera",
         precio: 21300,
         stock: 7,
@@ -70,9 +97,8 @@ const products = [
     },
 
     {
-        id: 8,
         categoria: "escritorios",
-        imagen: require ("../images/producto8.jpg"),
+        imagen: "images/producto8.jpg",
         titulo: "Escritorio curvo",
         precio: 23400,
         stock: 3,
@@ -80,9 +106,8 @@ const products = [
     },
 
     {
-        id: 9,
         categoria: "decoracion",
-        imagen: require ("../images/producto9.png"),
+        imagen: "images/producto9.png",
         titulo: "Planta artificial",
         precio: 2100,
         stock: 54,
@@ -90,9 +115,8 @@ const products = [
     },
 
     {
-        id: 10,
         categoria: "decoracion",
-        imagen: require ("../images/producto10.jpg"),
+        imagen: "images/producto10.jpg",
         titulo: "Combo plantas",
         precio: 3600,
         stock: 27,
@@ -100,9 +124,8 @@ const products = [
     },
 
     {
-        id: 11,
         categoria: "decoracion",
-        imagen: require ("../images/producto11.png"),
+        imagen: "images/producto11.png",
         titulo: "Adorno jirafa",
         precio: 1300,
         stock: 56,
@@ -110,9 +133,8 @@ const products = [
     },
 
     {
-        id: 12,
         categoria: "decoracion",
-        imagen: require ("../images/producto12.jpg"),
+        imagen: "images/producto12.jpg",
         titulo: "Conjunto 3 cuadros",
         precio: 4700,
         stock: 32,
@@ -120,9 +142,8 @@ const products = [
     },
 
     {
-        id: 13,
         categoria: "decoracion",
-        imagen: require ("../images/producto13.jpg"),
+        imagen: "images/producto13.jpg",
         titulo: "Lámpara ADN",
         precio: 7800,
         stock: 21,
@@ -130,9 +151,8 @@ const products = [
     },
 
     {
-        id: 14,
         categoria: "decoracion",
-        imagen: require ("../images/producto14.jpg"),
+        imagen: "images/producto14.jpg",
         titulo: "Lámpara LED",
         precio: 5900,
         stock: 46,
@@ -140,9 +160,8 @@ const products = [
     },
 
     {
-        id: 15,
         categoria: "sillas",
-        imagen: require ("../images/producto15.jpg"),
+        imagen: "images/producto15.jpg",
         titulo: "Silla madera",
         precio: 4400,
         stock: 35,
@@ -150,9 +169,8 @@ const products = [
     },
 
     {
-        id: 16,
         categoria: "sillas",
-        imagen: require ("../images/producto16.jpg"),
+        imagen: "images/producto16.jpg",
         titulo: "Silla blanca",
         precio: 7100,
         stock: 32,
@@ -160,19 +178,8 @@ const products = [
     },
 ];
 
-export const getProducts = (categoryId) =>
-    new Promise ((res, rej) => {
-        const response = categoryId
-        ? products.filter ((p) => p.categoria === categoryId) : products;
-        setTimeout(() => {
-            res (response);
-        }, 3000);
+export const cargarData = () => {
+    products.forEach (async (product) => {
+        await addDoc (productsRef, product)
     });
-
-export const getProduct = (productId) =>
-new Promise ((res, rej) => {
-    const response = products.find ((product) => product.id === +productId);
-    setTimeout(() => {
-        res (response);
-    });
-});
+};

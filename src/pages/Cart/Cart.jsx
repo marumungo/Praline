@@ -24,7 +24,7 @@ export const Cart = () => {
                         </div>
                     ))}
                     <hr />
-                    <div className="carrito_total">TOTAL: <strong>${getTotal()}</strong></div>
+                    <div className="carrito_total">TOTAL: <strong>${getTotal().toLocaleString()}</strong></div>
                 </div>
             </div>
         </main>
