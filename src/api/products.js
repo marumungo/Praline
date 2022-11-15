@@ -4,7 +4,7 @@ const products = [
         categoria: "estanterias",
         imagen: require ("../images/producto1.jpg"),
         titulo: "Estantería modular",
-        precio: "$5.200",
+        precio: 5200,
         stock: 20,
         descripcion: "Estantería de madera con amplios módulos rectangulares para almacenar tus pertenencias con toda la onda!"
     },
@@ -14,7 +14,7 @@ const products = [
         categoria: "estanterias",
         imagen: require ("../images/producto2.jpg"),
         titulo: "Estantería madera",
-        precio: "$3.800",
+        precio: 3800,
         stock: 15,
         descripcion: "Estantería de madera con tres pisos para almacenar tus pertenencias con toda la onda!"
     },
@@ -24,7 +24,7 @@ const products = [
         categoria: "sillas",
         imagen: require ("../images/producto3.jpg"),
         titulo: "Sillón mostaza",
-        precio: "$7.800",
+        precio: 7800,
         stock: 34,
         descripcion: "Sillón individual de ecocuero con un color mostaza que se adecúa a cualquier espacio"
     },
@@ -34,7 +34,7 @@ const products = [
         categoria: "sillas",
         imagen: require ("../images/producto4.jpg"),
         titulo: "Sillon tapizado",
-        precio: "$6.500",
+        precio: 6500,
         stock: 5,
         descripcion: "Sillón individual tapizado para brindar mayor comodidad, y darle a su vez, una hermosa terminación"
     },
@@ -44,7 +44,7 @@ const products = [
         categoria: "mesas",
         imagen: require ("../images/producto5.jpg"),
         titulo: "Mesa vidrio",
-        precio: "$12.000",
+        precio: 12000,
         stock: 9,
         descripcion: "Mesa de vidrio con apoyo de acero. La base es abstracta y responde a las nuevas tendencias"
     },
@@ -54,7 +54,7 @@ const products = [
         categoria: "mesas",
         imagen: require ("../images/producto6.jpg"),
         titulo: "Mesa blanca",
-        precio: "$14.700",
+        precio: 14700,
         stock: 13,
         descripcion: "Mesa blanca simple, con base de madera revestida para brindarle una mayor duración y resistencia"
     },
@@ -64,7 +64,7 @@ const products = [
         categoria: "escritorios",
         imagen: require ("../images/producto7.jpg"),
         titulo: "Escritorio madera",
-        precio: "$21.300",
+        precio: 21300,
         stock: 7,
         descripcion: "Escritorio de madera que combina el roble con un color blanco, que da un aspecto sobrio y elegante"
     },
@@ -74,7 +74,7 @@ const products = [
         categoria: "escritorios",
         imagen: require ("../images/producto8.jpg"),
         titulo: "Escritorio curvo",
-        precio: "$23.400",
+        precio: 23400,
         stock: 3,
         descripcion: "Escritorio con curvas para brindar una mayor fluidez y flexibilidad a los espacios"
     },
@@ -84,7 +84,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto9.png"),
         titulo: "Planta artificial",
-        precio: "$2.100",
+        precio: 2100,
         stock: 54,
         descripcion: "Maceta con planta real, para darle vida a tus ambientes"
     },
@@ -94,7 +94,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto10.jpg"),
         titulo: "Combo plantas",
-        precio: "$3.600",
+        precio: 3600,
         stock: 27,
         descripcion: "Maceta con planta real, para darle vida a tus ambientes"
     },
@@ -104,7 +104,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto11.png"),
         titulo: "Adorno jirafa",
-        precio: "$1.300",
+        precio: 1300,
         stock: 56,
         descripcion: "Combo de tres adornos de jirafas, con tres bellos colores en combinación unos con los otros"
     },
@@ -114,7 +114,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto12.jpg"),
         titulo: "Conjunto 3 cuadros",
-        precio: "$4.700",
+        precio: 4700,
         stock: 32,
         descripcion: "Combo de tres cuadros con lineas abstractas, que contrastan las sombras con la claridad de tonos beiges"
     },
@@ -124,7 +124,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto13.jpg"),
         titulo: "Lámpara ADN",
-        precio: "$7.800",
+        precio: 7800,
         stock: 21,
         descripcion: "Lámpara LED que con dos espirales recorre su altura de 1,20m"
     },
@@ -134,7 +134,7 @@ const products = [
         categoria: "decoracion",
         imagen: require ("../images/producto14.jpg"),
         titulo: "Lámpara LED",
-        precio: "$5.900",
+        precio: 5900,
         stock: 46,
         descripcion: "Lámpara LED de 1,10m con distintas tonalidades posibles, que varían entre tonos fríos y cálidos"
     },
@@ -144,7 +144,7 @@ const products = [
         categoria: "sillas",
         imagen: require ("../images/producto15.jpg"),
         titulo: "Silla madera",
-        precio: "$4.400",
+        precio: 4400,
         stock: 35,
         descripcion: "Silla de madera ideal para ubicarla en exteriores"
     },
@@ -154,7 +154,7 @@ const products = [
         categoria: "sillas",
         imagen: require ("../images/producto16.jpg"),
         titulo: "Silla blanca",
-        precio: "$7.100",
+        precio: 7100,
         stock: 32,
         descripcion: "Silla blanca con base de madera de roble revestida para brindarle mayor durabilidad"
     },

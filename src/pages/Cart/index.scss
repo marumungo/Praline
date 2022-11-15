@@ -26,16 +26,45 @@
     }
 
     .carrito_info {
-        margin: 2% 0% 2% 43%;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
+        margin: 2% 0% 2% 32%;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: flex-start;
+        font-family: $tipografia;
+        font-size: 1.8rem;
 
         .carrito_producto {
-            line-height: 3rem;
-            font-family: $tipografia;
-            margin: 1% 0% 0% 0%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 4%;
+
+            img {
+                width: 20%;
+                margin-right: 7%;
+            }
+
+            .carrito_producto_info {
+                line-height: 5rem;
+                margin: 1% 0% 0% 0%;
+
+                strong {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        hr {
+            text-align: center;
+            width: 50%;
+        }
+
+        .carrito_total {
+            margin-top: 2%;
+            font-size: 2.5rem;
+
+            strong {
+                color: $color1;
+            }
         }
     }
 }

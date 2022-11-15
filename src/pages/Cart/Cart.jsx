@@ -13,14 +13,18 @@ export const Cart = () => {
                 </div>
                 <div className="carrito_info">
                     {cart.map ((product) => (
-                        <div className="carrito_producto" key={product.id}>
-                            <div>Nombre : {product.titulo}</div>
-                            <div>Cantidad : {product.qty}</div>
-                            <div>Precio : {product.precio}</div>
-                            <hr />
+                        <div className="carrito_producto">
+                            <img src={product.imagen} alt="" />
+                            <div className="carrito_producto_info" key={product.id}>
+                                <div><strong>Nombre: </strong>{product.titulo}</div>
+                                <div><strong>Cantidad: </strong>{product.qty}</div>
+                                <div><strong>Precio: </strong>${product.precio.toLocaleString()}</div>
+                                <div><strong>Subtotal: </strong>${(product.precio * product.qty).toLocaleString()}</div>
+                            </div>
                         </div>
                     ))}
-                    <div>TOTAL : ${getTotal()}</div>
+                    <hr />
+                    <div className="carrito_total">TOTAL: <strong>${getTotal()}</strong></div>
                 </div>
             </div>
         </main>

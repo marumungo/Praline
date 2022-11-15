@@ -11,6 +11,7 @@
     .main_producto_price {
         @extend .main_producto_title;
         font-weight: 600;
+        color: $color1;
     }
 
     .main_producto_button {
