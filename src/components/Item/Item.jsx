@@ -12,7 +12,7 @@ export const Item = ({ imagen, titulo, precio, stock, id, categoria }) => {
             <Card.Img variant="top" src={imagen} />
             <Card.Body>
                 <Card.Title className = "main_producto_title">{titulo}</Card.Title>
-                <Card.Text className = "main_producto_price">${precio.toLocaleString()}</Card.Text>
+                <Card.Text className = "main_producto_price">${precio.toLocaleString ("es-AR")}</Card.Text>
                 <Button className = "main_producto_button" onClick={(e) => {
                     e.stopPropagation();
                     addProduct ({id, imagen, titulo, precio, stock}, 1)

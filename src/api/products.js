@@ -1,5 +1,5 @@
 import { db } from "./config";
-import { collection, getDocs, query, where, doc, getDoc, addDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc, addDoc, deleteDoc, updateDoc, increment, writeBatch } from "firebase/firestore";
 
 const productsRef = collection (db, "items");
 
@@ -7,7 +7,7 @@ export const getProducts = async (categoryId) => {
     const products = [];
 
     const q = categoryId
-    ? query(productsRef, where ("categoria", "==", categoryId))
+    ? query (productsRef, where ("categoria", "==", categoryId))
     : productsRef;
 
     const querySnapshot = await getDocs (q);
@@ -20,7 +20,7 @@ export const getProducts = async (categoryId) => {
 };
 
 export const getProduct = async (productId) => {
-    const document = doc(db, "items", productId);
+    const document = doc (db, "items", productId);
 
     const docSnap = await getDoc (document);
 
@@ -31,6 +31,26 @@ export const getProduct = async (productId) => {
     return null;
 };
 
+export const updateProduct = async (id, item) => {
+    const productDoc = await updateDoc (doc (db, "products", id), item);
+    return;
+};
+
+export const updateManyProducts = async (items) => {
+    const batch = writeBatch (db);
+
+    items.forEach (({ id, qty }) => {
+        const docRef = doc (db, "items", id);
+        batch.update (docRef, {stock: increment (-qty)});
+    });
+
+    batch.commit ();
+};
+
+export const deleteProduct = async (id) => {
+    const docRef = doc (db, "items", id);
+    const element = await deleteDoc (docRef);
+}
 
 const products = [
     {
