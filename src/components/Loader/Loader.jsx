@@ -1,12 +1,6 @@
 import { ThreeCircles } from  'react-loader-spinner'
-import { useEffect } from 'react'
 
 export const Loader = () => {
-    useEffect (() => {
-        console.log ("Está cargando")
-        return () => console.log ("Se desmontó")
-    }, [])
-
     return (
         <div className='cargando'>
             <ThreeCircles

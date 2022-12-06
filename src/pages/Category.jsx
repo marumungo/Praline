@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../api/products";
 import { ItemListContainer } from "components/index";
+import { Navigate } from "../../node_modules/react-router-dom/dist/index";
 
 export const Category = () => {
     const { categoryId } = useParams();
@@ -21,7 +22,8 @@ export const Category = () => {
 
     return (
         <>
-        <main className="main">
+            {!categoryId ? <Navigate to="/paginaNoEncontrada" replace /> : null}
+            <main className="main">
                 <div className='main_seccionProductos_categorias'>
                     <div className='main_tituloProductos'>
                         <hr />

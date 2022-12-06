@@ -1,5 +1,5 @@
 import { db } from "./config";
-import { collection, getDocs, query, where, doc, getDoc, addDoc, deleteDoc, updateDoc, increment, writeBatch } from "firebase/firestore";
+import { collection, getDocs, query, where, doc, getDoc, addDoc, increment, writeBatch } from "firebase/firestore";
 
 const productsRef = collection (db, "items");
 
@@ -31,11 +31,6 @@ export const getProduct = async (productId) => {
     return null;
 };
 
-export const updateProduct = async (id, item) => {
-    const productDoc = await updateDoc (doc (db, "products", id), item);
-    return;
-};
-
 export const updateManyProducts = async (items) => {
     const batch = writeBatch (db);
 
@@ -46,11 +41,6 @@ export const updateManyProducts = async (items) => {
 
     batch.commit ();
 };
-
-export const deleteProduct = async (id) => {
-    const docRef = doc (db, "items", id);
-    const element = await deleteDoc (docRef);
-}
 
 const products = [
     {

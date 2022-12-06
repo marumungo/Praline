@@ -67,5 +67,47 @@
             }
         }
     }
-}
 
+    .form {
+        margin: 0% 32% 2% 32%;
+        font-family: $tipografia;
+        font-size: 1.6rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+
+        .formLabels {
+            div {
+                width: 380%;
+
+                .formControl {
+                    font-size: 1.4rem;
+                    box-shadow: none;
+                    border-color: #ced4da;
+                }
+
+                .error {
+                    margin-top: 2%;
+                    font-size: 1.3rem;
+                    color: red;
+                }
+            }
+        }
+
+        .formButton {
+            margin-top: 2%;
+            font-family: $tipografia;
+            font-size: 1.8rem;
+            background-color: $color1;
+            border: none;
+
+            &:hover {
+                background-color: $color2;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}

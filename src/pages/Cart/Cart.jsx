@@ -1,17 +1,34 @@
 import { useCartContext } from "context/cartContext";
 import { useState } from "react";
-import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import { addOrder } from "api/orders";
 import { updateManyProducts } from "api/products";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export const Cart = () => {
-    const navigate = useNavigate ();
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [phone, setPhone] = useState("");
 
-    const [name, setName] = useState ("");
-    const [phone, setPhone] = useState ("");
     const [email, setEmail] = useState ("");
+    const [message, setMessage] = useState('');
+    const [error, setError] = useState(null);
+
+    function validEmail (email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    function handleEmail ({ target }) {
+        setEmail (target.value)
+
+        if (!validEmail(target.value)) {
+            setError('Email inválido');
+        } else {
+            setError(null);
+        }
+
+        setMessage(target.value);
+    }
 
     const { getTotal, cart, emptyCart } = useCartContext ();
 
@@ -24,17 +41,18 @@ export const Cart = () => {
         }));
 
         const order = {
-            buyer: {name, phone, email},
+            buyer: {name, surname, phone, email},
             items,
             total: getTotal ()
         };
 
-        const ide = await addOrder (order);
+        await addOrder (order);
         
         await updateManyProducts (items);
 
         emptyCart ();
     }
+
     return (
         <main>
             <div className="carrito">
@@ -46,7 +64,7 @@ export const Cart = () => {
                 <div className="carrito_info">
                     {cart.map ((product) => (
                         <div className="carrito_producto">
-                            <img src={product.imagen} alt="" />
+                            <img src={product.imagen} alt="imagen de producto" />
                             <div className="carrito_producto_info" key={product.id}>
                                 <div><strong>Nombre: </strong>{product.titulo}</div>
                                 <div><strong>Cantidad: </strong>{product.qty}</div>
@@ -59,22 +77,29 @@ export const Cart = () => {
                     <div className="carrito_total">TOTAL: <strong>${getTotal().toLocaleString ("es-AR")}</strong></div>
                 </div>
 
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Nombre</Form.Label>
-                        <Form.Control type="text" onChange = {(e) => setName (e.target.value)} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Teléfono</Form.Label>
-                        <Form.Control type="number" onChange = {(e) => setPhone (e.target.value)} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" onChange = {(e) => setEmail (e.target.value)} />
-                    </Form.Group>
-                </Form>
+                <div className="form">
+                    <Form className="formLabels">
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Nombre</Form.Label>
+                            <Form.Control className="formControl" type="text" onChange={(e) => setName(e.target.value)} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Apellido</Form.Label>
+                            <Form.Control className="formControl" type="text" onChange={(e) => setSurname(e.target.value)} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Teléfono</Form.Label>
+                            <Form.Control className="formControl" type="number" onChange={(e) => setPhone(e.target.value)} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control className="formControl" type="email" value={message} onChange = {handleEmail} />
+                            {error && <h2 className="error">{error}</h2>}
+                        </Form.Group>
+                    </Form>
 
-                <Button onClick={createOrder}>Comprar</Button>
+                    <Button className="formButton" onClick={createOrder}>FINALIZAR COMPRA</Button>
+                </div>
             </div>
         </main>
     );

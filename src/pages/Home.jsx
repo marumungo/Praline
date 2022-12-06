@@ -1,4 +1,4 @@
-import { cargarData, getProducts } from "api/products"
+import { getProducts } from "api/products"
 import { ItemListContainer, Newsletter } from "components/index"
 import { useEffect, useState } from "react"
 

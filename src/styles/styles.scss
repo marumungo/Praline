@@ -82,8 +82,57 @@ main {
   @import "../components/Newsletter/index.scss";
 
   @import "../pages/Cart/index.scss";
+
+  @import "../pages/Error/index.scss";
 }
 
 
 // FOOTER
 @import "../components/Footer/index.scss";
+
+// BUY ALERT
+
+.swal2-popup {
+  font-family: $tipografia !important;
+  width: 30% !important;
+  max-width: none;
+
+  .swal2-success-ring {
+    border-color: $color2 !important;
+  }
+
+  .swal2-success-line-tip {
+    background-color: $color1 !important;
+  }
+
+  .swal2-success-line-long{
+    background-color: $color1 !important;
+  }
+
+  .swal2-title {
+    font-size: 3rem;
+    color: $color1;
+  }
+
+  .swal2-html-container {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+
+    strong {
+      color: $color1;
+    }
+  }
+
+  .swal2-confirm {
+    font-size: 1.7rem !important;
+    background-color: $color1 !important;
+
+    &:hover {
+      background-color: $color2 !important;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
