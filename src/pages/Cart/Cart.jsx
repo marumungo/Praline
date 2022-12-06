@@ -4,6 +4,7 @@ import { addOrder } from "api/orders";
 import { updateManyProducts } from "api/products";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { BsTrashFill } from 'react-icons/bs';
 
 export const Cart = () => {
     const [name, setName] = useState("");
@@ -30,7 +31,7 @@ export const Cart = () => {
         setMessage(target.value);
     }
 
-    const { getTotal, cart, emptyCart } = useCartContext ();
+    const { getTotal, cart, emptyCart, removeProduct } = useCartContext ();
 
     const createOrder = async () => {
         const items = cart.map (({ id, titulo, qty, precio }) => ({
@@ -70,6 +71,13 @@ export const Cart = () => {
                                 <div><strong>Cantidad: </strong>{product.qty}</div>
                                 <div><strong>Precio: </strong>${product.precio.toLocaleString ("es-AR")}</div>
                                 <div><strong>Subtotal: </strong>${(product.precio * product.qty).toLocaleString ("es-AR")}</div>
+                                <Button className = "carrito_supr_button" 
+                                    onClick={(e) => {
+                                    e.stopPropagation();
+                                    removeProduct (product.id, 1)
+                                    }}>
+                                    <BsTrashFill />
+                                </Button>
                             </div>
                         </div>
                     ))}

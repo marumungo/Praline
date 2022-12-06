@@ -29,7 +29,7 @@ _Herramientas utilizadas dentro del proyecto_
 * [Sweet Alert](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html) - Para alertas personalizadas
 * [Font Awesome](https://fontawesome.com/v5/docs/web/use-with/react) - Usado para generar emojis
 
-## Demo 📌
+## Preview 📌
 
 _Para una vista previa del proyecto, se puede ingresar al siguiente [link](https://pralinebazaar.netlify.app/)_
 
