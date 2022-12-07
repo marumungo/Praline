@@ -1,4 +1,5 @@
 // SECCION PRODUCTOS
+@import "../../styles/mediaQueries.scss";
 
 .main_seccionProductos {
     margin: 2%;
@@ -9,29 +10,59 @@
         align-items: center;
 
         h1 {
-            margin: 0% 4.5% 0% 4.5%;
+            margin: 3% 4.5% 0% 4.5%;
             font-family: $tipografia;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 400;
             text-align: center;
 
             &:hover {
             color: $color1;
             }
+
+            @include celularHorizontal {
+                margin-top: 0%;
+                font-size: 2rem;
+            }
+
+            @include pantallaMediana {
+                font-size: 2.5rem;
+            }
+
+            @include pantallaGrande {
+                font-size: 3rem;
+            }
         }
 
         hr {
             text-align: center;
             width: 30%;
+            margin-top: 5%;
+
+            @include celularHorizontal {
+                margin-top: 2%;
+            }
+
+            @include pantallaPanoramica {
+                margin-top: 0%;
+            }
         }
     }
 
     .main_productos {
         margin: 2% 5% 2% 5%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
+        align-content: center;
         justify-content: center;
+
+        @include celularHorizontal {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 }
 
@@ -46,29 +77,51 @@
         align-items: center;
 
         h1 {
-            margin: 15% 4.5% 0% 4.5%;
+            margin: 3% 4.5% 0% 4.5%;
             font-family: $tipografia;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 400;
             text-align: center;
 
             &:hover {
             color: $color1;
             }
+
+            @include celularHorizontal {
+                margin-top: 2%;
+            }
+
+            @include pantallaMediana {
+                font-size: 2.5rem;
+            }
+
+            @include pantallaPanoramica {
+                margin-top: 15%;
+                font-size: 3rem;
+            }
         }
 
         hr {
             text-align: center;
             width: 30%;
-            margin-top: 15%;
+            margin-top: 5%;
+
+            @include celularHorizontal {
+                margin-top: 4%;
+            }
+
+            @include pantallaPanoramica {
+                margin-top: 15%;
+            }
         }
     }
 
     .main_tituloProductos_categoria {
         h2 {
-            margin: 1% 0% 0% 8.9%;
+            margin: 3% 0% 3% 0%;
             font-family: $tipografia;
-            font-size: 2rem;
+            font-size: 1.7rem;
+            text-align: center;
 
             strong {
                 color: $color1;
@@ -76,6 +129,17 @@
                 &:hover {
                     color: $color2;
                 }
+            }
+
+            @include pantallaGrande {
+                margin: 2% 0% 0% 12.5%;
+                font-size: 2rem;
+                text-align: left;
+            }
+
+            @include pantallaPanoramica {
+                margin: 1% 0% 0% 8.9%;
+                font-size: 2rem;
             }
         }
     }

@@ -9,12 +9,24 @@
     h2 {
         margin-bottom: 5%;
         font-family: $tipografia;
-        font-size: 3rem;
+        font-size: 1.8rem;
         font-weight: 600;
         text-align: center;
 
         &:hover {
         color: $color1;
+        }
+
+        @include celularHorizontal {
+            font-size: 2rem;
+        }
+
+        @include pantallaMediana {
+            font-size: 2.5rem;
+        }
+
+        @include pantallaGrande {
+            font-size: 3rem;
         }
     }
 
@@ -27,17 +39,16 @@
 
         .main_form_labels {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
-            flex-wrap: nowrap;
-            align-items: flex-start;
+            align-items: center;
 
             font-family: $tipografia;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
 
             .form-control {
                 font-family: $tipografia;
-                font-size: 1.6rem;
+                font-size: 1.4rem;
 
                 &:focus {
                 box-shadow: none;
@@ -50,6 +61,31 @@
                 &:focus {
                     box-shadow: none;
                 }
+
+                @include pantallaMediana {
+                    font-size: 1.5rem;
+                    width: 450%;
+                }
+
+                @include pantallaGrande {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @include pantallaMediana {
+                font-size: 1.7rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: baseline;
+            }
+
+            @include pantallaPanoramica {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                flex-wrap: nowrap;
+
+                font-size: 1.8rem;
             }
         }
 
@@ -60,6 +96,30 @@
         &:focus {
             box-shadow: none;
         }
+
+        .col-md-6 {
+            @include pantallaMediana {
+                margin-top: 5%;
+                padding: 0% !important;
+            }
+        }
+
+        .col-md-4 {
+            @include pantallaMediana {
+                margin-top: 5%;
+                padding: 0% !important;
+            }
+        }
+
+        @include pantallaMediana {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        @include pantallaPanoramica {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .valid-feedback {
@@ -68,14 +128,34 @@
     }
 
     .main_form_button {
-        width: 20%;
-        margin-top: 4%;
+        width: 50%;
+        margin-top: 10%;
         background-color: $color1;
         border: none;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
 
         &:hover {
             background-color: $color2;
         }
+
+        @include pantallaMediana {
+            margin: 13% 0% 0% 2%;
+            font-size: 1.6rem;
+        }
+
+        @include pantallaPanoramica {
+            margin: 4% 0% 0% 0%;
+            width: 20%;
+            font-size: 1.7rem;
+        }
+    }
+
+    @include pantallaGrande {
+        width: 100%;
+        margin: 5% 0% 4% 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

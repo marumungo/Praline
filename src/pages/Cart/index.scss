@@ -1,3 +1,5 @@
+@import "../../styles/mediaQueries.scss";
+
 .carrito {
     margin: 0%;
 
@@ -7,21 +9,41 @@
         align-items: center;
 
         h1 {
-            margin: 15% 4.5% 0% 4.5%;
+            margin: 3% 4.5% 0% 4.5%;
             font-family: $tipografia;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 400;
             text-align: center;
 
             &:hover {
             color: $color1;
             }
+
+            @include celularHorizontal {
+                margin-top: 2%;
+            }
+
+            @include pantallaGrande {
+                font-size: 3rem;
+            }
+
+            @include pantallaPanoramica {
+                margin-top: 15%;
+            }
         }
 
         hr {
             text-align: center;
             width: 30%;
-            margin-top: 15%;
+            margin-top: 5%;
+
+            @include celularHorizontal {
+                margin-top: 4%;
+            }
+
+            @include pantallaPanoramica {
+                margin-top: 15%;
+            }
         }
     }
 
@@ -31,26 +53,50 @@
         grid-template-columns: 1fr;
         align-items: flex-start;
         font-family: $tipografia;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
 
         .carrito_producto {
             display: flex;
-            flex-direction: row;
-            margin-bottom: 4%;
+            flex-direction: column;
+            margin: 10% 0% 4% -22%;
+            align-items: baseline;
             justify-content: flex-start;
-            width: 70%;
+            width: 90%;
 
             img {
-                width: 38%;
+                width: 100%;
                 margin-right: 7%;
+
+                @include celularHorizontal {
+                    width: 80%;
+                }
+
+                @include pantallaPanoramica {
+                    width: 38%;
+                }
             }
 
             .carrito_producto_info {
-                line-height: 5rem;
+                line-height: 4rem;
                 margin-left: 5%;
 
                 strong {
                     font-weight: 600;
+                }
+
+                @include celularHorizontal {
+                    margin-top: 4%;
+                }
+
+                @include pantallaGrande {
+                    line-height: 6rem;
+                    font-size: 2.5rem;
+                }
+
+                @include pantallaPanoramica {
+                    margin-top: 0%;
+                    line-height: 5rem;
+                    font-size: 1.8rem;
                 }
             }
 
@@ -59,26 +105,67 @@
                 border: none;
                 font-size: 1.7rem;
                 margin-top: 7%;
+
+                @include pantallaGrande {
+                    font-size: 3rem;
+                }
+            }
+
+            @include celularHorizontal {
+                margin: 5% 0% 4% -14%;
+                font-size: 1.7rem;
+            }
+
+            @include pantallaPanoramica {
+                font-size: 1.8rem;
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                width: 70%;
+                margin-top: 0%;
             }
         }
 
         hr {
             text-align: center;
             width: 50%;
+            margin: 15% 0% 10% 0%;
+
+            @include celularHorizontal {
+                margin-top: 8%;
+            }
+
+            @include pantallaPanoramica {
+                width: 50%;
+                margin: 0%;
+            }
         }
 
         .carrito_total {
-            margin-top: 2%;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
+            margin-left: -15%;
 
             strong {
                 color: $color1;
+            }
+
+            @include celularHorizontal {
+                margin-left: 0%;
+            }
+
+            @include pantallaGrande {
+                font-size: 4rem;
+            }
+
+            @include pantallaPanoramica {
+                margin: 2% 0% 0% 0%;
+                font-size: 2.5rem;
             }
         }
     }
 
     .form {
-        margin: 0% 32% 2% 32%;
+        margin: 10% 32% 2% 32%;
         font-family: $tipografia;
         font-size: 1.6rem;
         display: grid;
@@ -87,7 +174,7 @@
 
         .formLabels {
             div {
-                width: 380%;
+                width: 100%;
 
                 .formControl {
                     font-size: 1.4rem;
@@ -100,13 +187,21 @@
                     font-size: 1.3rem;
                     color: red;
                 }
+
+                @include pantallaGrande {
+                    width: 180%;
+                }
+
+                @include pantallaPanoramica {
+                    width: 380%;
+                }
             }
         }
 
         .formButton {
-            margin-top: 2%;
+            margin: 15% 0% 20% 0%;
             font-family: $tipografia;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background-color: $color1;
             border: none;
 
@@ -117,6 +212,34 @@
             &:focus {
                 box-shadow: none;
             }
+
+            @include celularHorizontal {
+                margin: 5% 0% 15% 0%;
+                font-size: 1.7rem;
+            }
+
+            @include pantallaGrande {
+                font-size: 2.3rem;
+            }
+
+            @include pantallaPanoramica {
+                margin: 2% 0% 0% 0%;
+                font-size: 1.8rem;
+            }
+        }
+
+        @include celularHorizontal {
+            font-size: 1.8rem;
+        }
+
+        @include pantallaGrande {
+            font-size: 2.3rem;
+            margin: 6% 32% 2% 32%;
+        }
+
+        @include pantallaPanoramica {
+            margin: 0% 32% 2% 32%;
+            font-size: 1.6rem;
         }
     }
 }

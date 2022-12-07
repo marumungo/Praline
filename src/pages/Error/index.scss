@@ -1,3 +1,5 @@
+@import "../../styles/mediaQueries.scss";
+
 .main_error {
     margin: 0%;
 
@@ -7,36 +9,55 @@
         align-items: center;
 
         h1 {
-            margin: 15% 4.5% 0% 4.5%;
+            margin: 3% 4.5% 0% 4.5%;
             font-family: $tipografia;
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 400;
             text-align: center;
 
             &:hover {
             color: $color1;
             }
+
+            @include pantallaGrande {
+                margin-top: 15%;
+                font-size: 3rem;
+            }
         }
 
         hr {
             text-align: center;
             width: 30%;
-            margin-top: 15%;
+            margin-top: 5%;
+
+            @include pantallaGrande {
+                margin-top: 15%;
+            }
         }
     }
 
     .main_cuerpoError {
         font-family: $tipografia;
         text-align: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-items: center;
         margin-top: 2%;
 
         img {
-            margin-top: 2%;
-            width: 70%;
+            margin-top: 10%;
+            width: 100%;
+
+            @include celularHorizontal {
+                margin-top: 5%;
+                width: 70%;
+            }
+
+            @include pantallaGrande {
+                margin-top: 2%;
+                width: 70%;
+            }
         }
 
         .main_cuerpoError_texto {
@@ -44,23 +65,44 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            margin: 0% 30% 0% 10%;
+            margin: 0% 10% 0% 10%;
 
             h2 {
-                margin: 0% 0% 4% 0%;
+                margin: -12% 0% 7% 0%;
                 font-weight: 800;
-                font-size: 3.5rem;
+                font-size: 2rem;
                 color: $color1;
 
                 &:hover {
                     color: $color2;
                 }
+
+                @include pantallaGrande {
+                    font-size: 3.5rem;
+                    margin: 0% 0% 4% 0%;
+                }
             }
 
             p {
-                line-height: 5rem;
-                font-size: 2.5rem;
+                line-height: 3.5rem;
+                font-size: 1.5rem;
+                margin-bottom: 10%;
+
+                @include pantallaGrande {
+                    line-height: 5rem;
+                    font-size: 2.5rem;
+                    margin-bottom: 0%;
+                }
             }
+
+            @include pantallaGrande {
+                margin: 0% 30% 0% 10%;
+            }
+        }
+
+        @include pantallaGrande {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

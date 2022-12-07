@@ -62,7 +62,9 @@ main {
   z-index: 1;
 
   .imagenPresentacion {
-    margin-top: 10%;
+    @include pantallaPanoramica {
+      margin-top: 10%;
+    }
   }
 
   img {
@@ -84,6 +86,8 @@ main {
   @import "../pages/Cart/index.scss";
 
   @import "../pages/Error/index.scss";
+
+  @import "../styles/mediaQueries.scss";
 }
 
 

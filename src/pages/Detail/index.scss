@@ -1,12 +1,29 @@
+@import "../../styles/mediaQueries.scss";
+
 .main_producto_detalle {
     margin: 0%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 
     img {
-        width: 40%;
-        margin: 15% 0% 5% 7%;
+        width: 85%;
+        margin: 5% 0% 5% 7%;
+
+        @include celularHorizontal {
+            margin: 5% 0% 5% 15%;
+            width: 70%;
+        }
+
+        @include pantallaGrande {
+            width: 45%;
+            height: 45%;
+            margin: 2% 0% 5% 7%;
+        }
+
+        @include pantallaPanoramica {
+            margin: 15% 0% 5% 7%;
+        }
     }
 
     div {
@@ -14,12 +31,22 @@
         flex-direction: column;
         justify-content: flex-start;
         text-align: left;
-        margin: 10% 5% 5% 5%;
+        margin: 1% 5% 5% 5%;
 
         .main_producto_title_detalle {
             font-family: $tipografia;
-            font-size: 3.8rem;
+            font-size: 2.3rem;
             margin-bottom: 5%;
+            font-weight: 600;
+            color: $color1;
+
+            @include pantallaGrande {
+                font-size: 3.5rem;
+            }
+
+            @include pantallaPanoramica {
+                font-size: 3.8rem;
+            }
         }
 
         .main_producto_price_detalle {
@@ -31,7 +58,34 @@
 
         .main_producto_descripcion_detalle {
             font-family: $tipografia;
-            font-size: 2.3rem;
+            font-size: 1.8rem;
+
+            @include pantallaGrande {
+                font-size: 2.1rem;
+            }
+
+            @include pantallaPanoramica {
+                font-size: 2.3rem;
+            }
         }
+
+        @include pantallaGrande {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            margin: 1% 5% 5% 5%;
+        }
+
+        @include pantallaPanoramica {
+            margin: 10% 5% 5% 5%;
+        }
+    }
+
+    @include pantallaGrande {
+        margin: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
