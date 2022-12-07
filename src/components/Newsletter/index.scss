@@ -69,6 +69,7 @@
 
                 @include pantallaGrande {
                     font-size: 1.6rem;
+                    width: 100%;
                 }
             }
 
@@ -82,9 +83,9 @@
             @include pantallaPanoramica {
                 display: flex;
                 flex-direction: row;
-                align-items: flex-start;
+                justify-content: center;
                 flex-wrap: nowrap;
-
+                align-items: flex-end;
                 font-size: 1.8rem;
             }
         }
@@ -102,12 +103,22 @@
                 margin-top: 5%;
                 padding: 0% !important;
             }
+
+            @include pantallaPanoramica {
+                margin: 0% 6% 0% 6%;
+
+            }
         }
 
         .col-md-4 {
             @include pantallaMediana {
                 margin-top: 5%;
                 padding: 0% !important;
+            }
+
+            @include pantallaPanoramica {
+                margin: 0% 0% 0% 6%;
+
             }
         }
 
@@ -153,9 +164,5 @@
     @include pantallaGrande {
         width: 100%;
         margin: 5% 0% 4% 0%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 }
